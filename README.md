@@ -1,2 +1,28 @@
 # project-check-style-tools
 前端项目开发规范：语法检测、代码风格、Git提交规范
+## stylelint
+检查规则默认全部关闭，在 `.stylelintrc.mjs` 按需开启
+### 依赖安装
+`pnpm i stylelint stylelint-config-standard stylelint-scss postcss-scss -D`
+### `.stylelintrc.mjs` 配置项
+官方支持的最新规则集合（含规则示例）[Rules | Stylelint](https://stylelint.io/user-guide/rules)
+```js
+/** @type {import('stylelint').Config} */
+export default {
+  extends: 'stylelint-config-standard',
+  plugins: [],
+  customSyntax: 'postcss-scss', // PostCSS插件之一，使得PostCSS可以处理scss
+  rules: {
+    'declaration-block-no-duplicate-properties': true, // 块内不允许相同属性
+    'no-duplicate-at-import-rules': true, // 不允许重复引入@import相同样式
+    'no-duplicate-selectors': true, // 不允许重复选择器
+    'block-no-empty': true, // 不允许空样式块 .cls {}
+    'comment-no-empty': true, // 不允许空白注释 /* */
+    'color-no-invalid-hex': true, // color hex值必须合法
+    'function-calc-no-unspaced-operator': true, // calc()运算符号前后强制空格
+    'keyframe-declaration-no-important': true // @keyframes里不允许使用!important
+    // ...
+  }
+}
+剩余必要规则日后再补充
+```
