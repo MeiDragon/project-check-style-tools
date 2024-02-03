@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "npx husky install",
+    "prepare": "husky",
+    "lint-staged": "lint-staged",
     "lint": "eslint src --ext .js,.ts,.jsx,.tsx --fix",
     "lint:style": "stylelint 'src/**/*.{css,scss,sass}' --fix",
     "format": "prettier -w 'src/**/*.{js,jsx,ts,tsx}' --config .prettierrc"
