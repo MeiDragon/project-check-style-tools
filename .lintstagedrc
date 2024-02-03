@@ -1,9 +1,9 @@
 {
   "*.{js,jsx,ts,tsx}": [
-    "npm run format",
-    "npm run lint"
+    "pnpm run format",
+    "pnpm run lint"
   ],
   "*.{css,scss}": [
-    "npm run lint:style"
+    "pnpm run lint:style"
   ]
 }
